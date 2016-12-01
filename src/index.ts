@@ -1,5 +1,3 @@
-import { initAngular1 } from './ng1';
-
 const DEVICE_READY_TIMEOUT = 2000;
 
 declare var window;
@@ -222,8 +220,7 @@ export * from './plugins/youtube-video-player';
 export * from './plugins/z-bar';
 export * from './plugins/zip';
 
-// Window export to use outside of a module loading system
-window['IonicNative'] = {
+export let Plugins = [
   ActionSheet,
   AdMob,
   AndroidFingerprintAuth,
@@ -332,9 +329,7 @@ window['IonicNative'] = {
   YoutubeVideoPlayer,
   ZBar,
   Zip
-};
-
-initAngular1(window['IonicNative']);
+];
 
 // To help developers using cordova, we listen for the device ready event and
 // log an error if it didn't fire in a reasonable amount of time. Generally,
