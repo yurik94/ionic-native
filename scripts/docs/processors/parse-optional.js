@@ -9,7 +9,7 @@ module.exports = function parseOptional() {
             if (doc.members[i].params && doc.members[i].params.length) {
               for (let ii in doc.members[i].params) {
                 if (doc.members[i].params[ii].optional) {
-                  doc.members[i].params[ii].description += '<strong class="tag">Optional</strong>';
+                  doc.members[i].params[ii].description += '<strong class="tag grey">Optional</strong>';
                 }
               }
             }
