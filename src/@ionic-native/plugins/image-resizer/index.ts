@@ -37,6 +37,10 @@ export interface ImageResizerOptions {
   fileName?: string;
 }
 
+export interface  ImageResizerSizeOptions{
+  data: string,
+  imageDataType: string,
+}
 /**
  * @name Image Resizer
  * @description
@@ -74,9 +78,9 @@ export interface ImageResizerOptions {
  */
 @Plugin({
   pluginName: 'ImageResizer',
-  plugin: 'https://github.com/protonet/cordova-plugin-image-resizer.git',
+  plugin: 'https://github.com/yurik94/cordova-plugin-image-resizer.git',
   pluginRef: 'ImageResizer',
-  repo: 'https://github.com/protonet/cordova-plugin-image-resizer',
+  repo: 'https://github.com/yurik94/cordova-plugin-image-resizer',
   platforms: ['Android', 'iOS', 'Windows']
 })
 @Injectable()
@@ -86,4 +90,10 @@ export class ImageResizer extends IonicNativePlugin {
    */
   @Cordova()
   resize(options: ImageResizerOptions): Promise<any> { return; }
+
+  /**
+   * @returns {Promise<any>}
+   */
+  @Cordova()
+  size(options: ImageResizerSizeOptions): Promise<any> { return; }
 }
